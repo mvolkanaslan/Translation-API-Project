@@ -1,7 +1,7 @@
 class Request{
     static async getLangs(){
         let response = await fetch("./js/languages.json");
-        let langs = response.json();
+        let langs = await response.json();
         return langs
     }
     
@@ -13,5 +13,4 @@ class Request{
         translation.textLangTo = await data.responseData.translatedText;
         return  translation;
     }
-
 }
